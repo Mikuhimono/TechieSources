@@ -1,0 +1,202 @@
+body {
+  /* Set Default font and center text */
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+body {
+  /* Background gradient styling */
+  background: linear-gradient(to bottom, #CDB4DB, #FFC8DD, #FFAFCC, #BDE0FE, #A2D2FF);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.sidebar {
+  /* Sidebar styles */
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  transition: left 0.7s ease;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidebar a {
+  /* Sidebar links style */
+  display: block;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 15px;
+  color: white;
+  transition: background 0.45s;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+}
+
+.sidebar h4 {
+  color: white;
+  margin-top: 25px;
+  font-size: 28px;
+}
+
+.toggle-btn {
+  /* Sidebar Toggle Button */
+  position: fixed;
+  top: 15px;
+  left: 4px;
+  font-size: 30px;
+  color: gray;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1100;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: top 0.5s ease, left 0.5s ease;
+}
+
+.toggle-btn.open {
+  display: flex;
+}
+
+.words {
+  display: none;
+}
+
+.words.open {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.container {
+  /* Main Content Style */
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  color: rgba(160, 100, 184, 0.4);
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  margin: 5px;
+}
+
+#pdfList {
+  /* RRL list style */
+  margin-top: 20px;
+  text-align: left;
+}
+
+.pdf-entry {
+  position: relative;
+  padding: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+  background: none;
+}
+
+.pdf-entry::before {
+  /* RRL style */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/schoolBg.jpg");
+  background-position: calc(100% - 0px) calc(60% - 0px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: unset;
+  opacity: 0.3;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+
+.pdfTitle {
+  /* RRL title */
+  color: #b71c1c;
+
+}
+
+.pdfViewer {
+  /* RRL View Button */
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #b71c1c;
+  color: white;
+  text-decoration: none;
+}
+
+.pdfViewer:hover {
+  background: green;
+  transition: background 0.6s ease;
+}
+
+.pdfDownload {
+  /* RRL Download Button */
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 8px;
+  background-color: #b71c1c;
+  color: white;
+  text-decoration: none;
+}
+
+.pdfDownload:hover {
+  background: blue;
+  transition: background 0.6s ease;
+}
+
+.upload-btn {
+  /* Upload Button style */
+  color: black;
+  background-color: white;
+  transition: color 0.3s ease-in, background-color 0.3s ease-in;
+  border: 1px solid gray;
+}
+
+.upload-btn:hover {
+  color: red;
+  background-color: gray;
+  transition: background 0.4s ease-out, color 0.4s ease-out;
+}
+
+@media all and (max-width: 820px) {
+  /* Other device style */
+
+  input,
+  select,
+  button {
+    padding: 8px;
+    margin: 1.5px;
+  }
+
+  .pdf-entry::before {
+    background-position: calc(50% - 0px) calc(30% - 0px);
+  }
+}
