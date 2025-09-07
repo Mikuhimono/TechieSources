@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ICT Research Hub | Login</title>
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+  <div class="auth-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username or Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <a href="register.html">Register</a></p>
+    <div id="msg"></div>
+  </div>
+  <script>
+    async function login() {
+      let res = await fetch("../php/login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value
+        })
+      });
+      let data = await res.json();
+      if (data.success) {
+        localStorage.setItem("loggedInUser", JSON.stringify(data.user));
+        window.location.href = "home.html";
+      } else {
+        document.getElementById("msg").innerText = data.error;
+      }
+    }
+  </script>
+</body>
+
+</html>
