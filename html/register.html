@@ -20,7 +20,7 @@
     </div>
     <script>
         async function register() {
-            let res = await fetch("../php/register.php", {
+            let res = await fetch("../php/register.php", { // Read register.php
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -29,7 +29,7 @@
                     password: document.getElementById("password").value
                 })
             });
-            let data = await res.json();
+            let data = await res.json(); // Put the username and password in data/users.json
             if (data.success) {
                 alert("✅ Registered! Please login.");
                 window.location.href = "login.html";

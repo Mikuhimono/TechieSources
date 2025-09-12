@@ -19,7 +19,7 @@
   </div>
   <script>
     async function login() {
-      let res = await fetch("../php/login.php", {
+      let res = await fetch("../php/login.php", { // Read login.php
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -27,7 +27,7 @@
           password: document.getElementById("password").value
         })
       });
-      let data = await res.json();
+      let data = await res.json(); // Put the username and password in data/users.json
       if (data.success) {
         localStorage.setItem("loggedInUser", JSON.stringify(data.user));
         window.location.href = "home.html";

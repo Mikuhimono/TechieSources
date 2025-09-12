@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div class="topbar" id="topbar"></div>
+    <div class="topbar" id="topbar"></div> <!-- Account -->
     
     <!-- Sidebar Toggle Button (open/closes sidebar) -->
     <button class="toggle-btn" id="toggleButton" onclick="toggleSidebar()">&#9776; <a href="home.html" class="words" id="words">ICT Research Hub</a></button>
@@ -35,8 +35,9 @@
 
     <script src="../javascript/purpose.js"></script>
     <script>
+      // Account functions (Sign In/Up, Dashboard, etc.)
         async function loadUser() {
-          let res = await fetch("../php/user.php");
+          let res = await fetch("../php/user.php"); // Find the account on data/users.json
           let data = await res.json();
           if (data.user) {
             let u = data.user;

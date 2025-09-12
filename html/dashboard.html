@@ -15,7 +15,7 @@
       background-attachment: fixed;
     }
 
-    .container {
+    .container { /* Dashboard Style */
       width: 500px;
       margin: 50px auto;
       border: 1px solid white;
@@ -69,7 +69,7 @@
 
     .logout {
       border: 1px solid #333;
-      background-color: blue;
+      background-color: red;
       border-radius: 8px;
       font-size: 24px;
     }
@@ -105,14 +105,14 @@
 
   <script>
     async function loadUser() {
-      let res = await fetch("../php/user.php");
+      let res = await fetch("../php/user.php"); // Find the account on data/users.json
       let data = await res.json();
       if (data.user) {
         let u = data.user;
         document.getElementById("profile").innerHTML = `
           <img src="${u.profile_pic || '../images/icon.png'}" class="profile-pic"><br>
           <strong>Username: @${u.username} (${u.nickname})</strong><br>
-          <small>Email:<a href="emailto:${u.email}"> ${u.email}</small>
+          <small>Email:<a href="mailto:${u.email}"> ${u.email}</small>
         `;
         document.getElementById("nickname").value = u.nickname || "";
       } else {
@@ -120,7 +120,7 @@
       }
     }
 
-    document.getElementById("updateForm").addEventListener("submit", async (e) => {
+    document.getElementById("updateForm").addEventListener("submit", async (e) => { // If the user update their profile
       e.preventDefault();
       let formData = new FormData(document.getElementById("updateForm"));
 
