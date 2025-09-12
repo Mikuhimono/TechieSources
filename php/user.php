@@ -7,7 +7,7 @@ if (!isset($_SESSION["username"])) {
 }
 
 $dataFile = __DIR__ . "/data/users.json";
-$users = json_decode(file_get_contents($dataFile), true);
+$users = json_decode(file_get_contents($dataFile), true); // Check the data/users.json
 
 foreach ($users as $u) {
     if ($u["username"] === $_SESSION["username"]) {

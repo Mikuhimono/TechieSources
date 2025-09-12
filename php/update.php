@@ -2,13 +2,13 @@
 header("Content-Type: application/json");
 session_start();
 
-$dataFile = __DIR__ . "/data/users.json";
+$dataFile = __DIR__ . "/data/users.json"; // Connect the data/users.json
 if (!isset($_SESSION["username"])) {
     echo json_encode(["error" => "Not logged in"]);
     exit;
 }
 
-$users = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : [];
+$users = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : []; // Check the data/users.jsopn
 if (!is_array($users)) $users = [];
 
 // Find user

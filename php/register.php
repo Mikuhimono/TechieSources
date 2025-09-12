@@ -1,6 +1,7 @@
 <?php
+// Register
 header("Content-Type: application/json");
-$dataFile = __DIR__ . "/data/users.json";
+$dataFile = __DIR__ . "/data/users.json"; // Connect to data/users.json
 
 $input = json_decode(file_get_contents("php://input"), true);
 if (!$input) { echo json_encode(["error" => "No input"]); exit; }
@@ -9,7 +10,7 @@ $username = trim($input["username"]);
 $password = $input["password"];
 $email = trim($input["email"]);
 
-$users = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : [];
+$users = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : []; // Check the data/users.json
 if (!is_array($users)) $users = [];
 
 // Check duplicate
