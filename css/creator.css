@@ -15,7 +15,7 @@ body {
   background-attachment: fixed;
 }
 
-.topbar {
+.topbar { /* Account style */
   display: block;
   align-items: center;
   padding: 10px;
@@ -208,5 +208,9 @@ body {
   .creator-card {
     padding: -1rem;
     margin-left: 2.5rem;
+  }
+
+  .topbar img {
+    margin-left: 70px;
   }
 }
