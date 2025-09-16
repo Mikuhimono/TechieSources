@@ -1,5 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ICT Research Hub | Upload</title>
+    <link rel="icon" type="image/png" href="../images/icon.png">
+    <style>
+        body {
+            font-family: 'Segioe UI', sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            background: #f3defe;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        pre {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: left;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Upload PDF</h2>
+        <pre>
 <?php
- 
+
 $dataFile = "../pdf_data.json"; // where the files stored
 // Expecting fields: title, year, and pdf_file
 $title = $_POST['title'];
@@ -28,7 +72,7 @@ foreach (scandir($targetDir) as $existingFile) {
 // include_once("review_pdfs.php");
 
 // Move upload file
-if (move_uploaded_file($file["tmp_name"] , $targetFile)) {
+if (move_uploaded_file($file["tmp_name"], $targetFile)) {
     $entry = [
         "title" => $title,
         "year" => $year,
@@ -45,3 +89,8 @@ if (move_uploaded_file($file["tmp_name"] , $targetFile)) {
     echo "Upload failed. Try again!";
 }
 ?>
+</pre>
+    </div>
+</body>
+
+</html>

@@ -1,3 +1,4 @@
+
 <?php
 /* (⚠️ FOR ANDROID/iOS)
 Phone browsers often don’t have a full PDF viewer they can’t render inline, 
@@ -28,9 +29,9 @@ if (isset($_GET['file'])) {
         exit;
     } else {
         echo "File not found.";
-        }
-    } else {
-        echo "No file specified.";
     }
+} else {
+    echo "No file specified.";
+}
 
 ?>
