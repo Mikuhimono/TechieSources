@@ -1,4 +1,3 @@
-
 <?php
 /* (⚠️ FOR ANDROID/iOS)
 Phone browsers often don’t have a full PDF viewer they can’t render inline, 
@@ -33,5 +32,6 @@ if (isset($_GET['file'])) {
 } else {
     echo "No file specified.";
 }
+
 
 ?>
