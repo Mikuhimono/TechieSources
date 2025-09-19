@@ -1,6 +1,8 @@
 # PSEUDOCODE
 
 ### ❗ This pseudocode is to guide others to understand how this website works. 
+----
+**THIS IS OUTDATED, We will fix this if the website is complete.**
 ----  
 ```pgsql
 START WEBSITE
@@ -45,5 +47,6 @@ IF user uploads a PDF
     UPDATE pdf_data.json with new file info
  ENDIF
 END WEBSITE
+
 
 ```
