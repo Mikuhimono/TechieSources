@@ -89,6 +89,16 @@ body::before {
     color: white;
 }
 
+.account {
+    text-decoration: none;
+    color: blue;
+}
+
+.account:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+
 .input-group {
     position: relative;
     margin: 10px 0;
