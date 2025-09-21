@@ -30,7 +30,7 @@ foreach ($pdfList as $pdf) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Missing PDFs Checker</title>
+    <title>ICT Research Hub | Missing PDF Checker</title>
     <link rel="icon" type="image/png" href="../images/icon.png">
     <style>
         body {

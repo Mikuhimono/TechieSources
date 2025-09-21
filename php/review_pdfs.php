@@ -137,7 +137,7 @@ file_put_contents(__DIR__ . '/../duplicate.json', json_encode($duplicates, JSON_
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Duplicate PDF Checker</title>
+    <title>ICT Research Hub | Duplicate Checker</title>
     <link rel="icon" type="image/png" href="../images/icon.png">
     <style>
         body {
