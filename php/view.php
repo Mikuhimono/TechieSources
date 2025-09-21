@@ -33,5 +33,4 @@ if (isset($_GET['file'])) {
     echo "No file specified.";
 }
 
-
 ?>

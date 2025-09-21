@@ -8,7 +8,11 @@
     <style>
         body {
             font-family: 'Segioe UI', sans-serif;
-            background: #f4f6f9;
+            background: linear-gradient(to bottom, #CDB4DB, #FFC8DD, #FFAFCC, #BDE0FE, #A2D2FF);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
         }
