@@ -40,12 +40,16 @@ if (!isset($_SESSION['authenticated'])) {
         <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <title>PDF Checker Login</title>
+            <title>ICT Research Hub | Admin Login</title>
             <link rel="icon" type="image/png" href="../images/school.png">
             <style>
                 body {
                     font-family: Arial, sans-serif;
-                    background: #f5f7fa;
+                    background: linear-gradient(to bottom, #CDB4DB, #FFC8DD, #FFAFCC, #BDE0FE, #A2D2FF);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-attachment: fixed;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -53,7 +57,7 @@ if (!isset($_SESSION['authenticated'])) {
                     margin: 0;
                 }
                 .login-box {
-                    background: #fff;
+                    background: linear-gradient(to bottom, #F9AABD, #F5CCDC, #F4E4E5, #E8D0E8, #D5AEDA);
                     padding: 30px;
                     border-radius: 12px;
                     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -65,7 +69,7 @@ if (!isset($_SESSION['authenticated'])) {
                     color: #333;
                 }
                 input[type="password"] {
-                    width: 100%;
+                    width: 90%;
                     padding: 10px;
                     margin-bottom: 15px;
                     border: 1px solid #ccc;
