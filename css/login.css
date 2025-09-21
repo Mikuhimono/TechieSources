@@ -44,7 +44,7 @@ body::before {
 
 .auth-container h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #ff3;
 }
 
 .auth-container input {
@@ -61,6 +61,10 @@ body::before {
 .auth-container input:focus {
     border: 1px solid #4facfe;
     outline: none;
+}
+
+.auth-container input::placeholder {
+    color: #444;
 }
 
 .auth-container button {
@@ -83,6 +87,64 @@ body::before {
     margin-top: 15px;
     font-size: 14px;
     color: white;
+}
+
+.input-group {
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #000;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    color: #444;
+    font-size: 14px;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -4px;
+    left: 8px;
+    font-size: 12px;
+    color: #4facfe;
+}
+
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="gray" viewBox="0 0 24 24"><path d="M12 4.5c-7.63 0-11.25 7.5-11.25 7.5s3.62 7.5 11.25 7.5 11.25-7.5 11.25-7.5-3.62-7.5-11.25-7.5zm0 12.25a4.75 4.75 0 1 1 0-9.5 4.75 4.75 0 0 1 0 9.5z"/><circle cx="12" cy="12" r="2.5"/></svg>') no-repeat center;
+  background-size: 20px;
+}
+
+.toggle-password.show {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="gray" viewBox="0 0 24 24"><path d="M2 3.27 3.28 2 21 19.72 19.73 21l-2.18-2.18C15.97 19.54 14.24 20 12 20c-7.63 0-11.25-7.5-11.25-7.5S4.37 5 12 5c1.86 0 3.61.37 5.18 1.04L2 3.27z"/></svg>') no-repeat center;
+  background-size: 20px;
 }
 
 .msg {
