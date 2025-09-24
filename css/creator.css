@@ -141,7 +141,7 @@ body {
 
 .creator-card {
   /* Card style */
-  background: white;
+  background: rgba(12, 12, 13, 1)white;
   border-radius: 12px;
   padding: 1rem;
   width: 250px;
