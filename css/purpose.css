@@ -75,12 +75,6 @@ body {
     background-color: #444;
 }
 
-.sidebar h4 {
-    color: white;
-    margin-top: 25px;
-    font-size: 28px;
-}
-
 .toggle-btn {
     /* Sidebar Toggle Button */
     position: fixed;
@@ -142,6 +136,7 @@ body {
     margin-top: 40px;
     letter-spacing: 1px;
     word-spacing: 2px;
+    max-width: 1100px;
 }
 
 .rrl-color {

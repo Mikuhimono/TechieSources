@@ -73,12 +73,6 @@ body {
   background-color: #444;
 }
 
-.sidebar h4 {
-  color: white;
-  margin-top: 25px;
-  font-size: 28px;
-}
-
 .toggle-btn {
   /* Sidebar Toggle Button */
   position: fixed;
