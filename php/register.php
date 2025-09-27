@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Register
 header("Content-Type: application/json");
 $dataFile = __DIR__ . "/data/users.json"; // Connect to data/users.json
@@ -28,12 +29,14 @@ $newUser = [
     "email" => $email,
     "password" => password_hash($password, PASSWORD_DEFAULT),
     "nickname" => $username,
-    "profile_pic" => "",
+    "profile_pic" => "/images/starter.png",
     "created" => date("c")
 ];
 
 $users[] = $newUser;
 file_put_contents($dataFile, json_encode($users, JSON_PRETTY_PRINT));
+
+$_SESSION["username"]= $username;
 
 echo json_encode(["success" => true, "user" => $newUser]);
 ?>

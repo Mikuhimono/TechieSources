@@ -1,1 +1,20 @@
-[]
+[
+    {
+        "id": "u_68cfd83fe9448",
+        "username": "Zeira",
+        "email": "tanjiromafialeader@gmail.com",
+        "password": "$2y$10$3mnfvMpQkMVAtlifpYlRJeBfeQsv.Cde33AwG.X6v\/L6off8s51vy",
+        "nickname": "Clark",
+        "profile_pic": "..\/profiles\/Zeira.jpg",
+        "created": "2025-09-21T12:49:36+02:00"
+    },
+    {
+        "id": "u_68d7aed2cc587",
+        "username": "Dummy",
+        "email": "dummy@gmail.com",
+        "password": "$2y$10$oP\/Ml5QKmr.6HVjM8rDbKecKBU3I4QX\/kw6vMqH\/d.tQTa0p9iJIm",
+        "nickname": "Dummy",
+        "profile_pic": "\/images\/starter.png",
+        "created": "2025-09-27T11:30:58+02:00"
+    }
+]
