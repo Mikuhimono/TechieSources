@@ -70,15 +70,15 @@ function toggleSidebar() {
     const words = document.getElementById("words");
     if(sidebar.style.left === "0px") {
         sidebar.style.left = "-250px";
-        toggleButton.style.top = "15px";
+       // toggleButton.style.top = "15px";
         toggleButton.style.left = "15px";
 
         words.classList.remove("open");
         toggleButton.classList.remove("open");
     } else {
         sidebar.style.left = "0px";
-        toggleButton.style.top = "5px";
-        toggleButton.style.left = "1px";
+       // toggleButton.style.top = "5px";
+        toggleButton.style.left = "-2px";
 
         words.classList.add("open");
         toggleButton.classList.add("open");

@@ -53,7 +53,7 @@ function toggleSidebar() {
     // closing the sidebar
     if(sidebar.style.left === "0px") {
         sidebar.style.left = "-250px";
-        toggleButton.style.top = "15px";
+       // toggleButton.style.top = "15px";
         toggleButton.style.left = "4px";
 
         // Remove active state
@@ -61,7 +61,7 @@ function toggleSidebar() {
         words.classList.remove("open");
     } else { // Opening the sidebar
         sidebar.style.left = "0px";
-        toggleButton.style.top = "5px";
+       // toggleButton.style.top = "5px";
         toggleButton.style.left = "-8px";
 
         // Mark active

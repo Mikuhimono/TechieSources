@@ -7,7 +7,7 @@ function toggleSidebar() {
 
     if (sidebar.style.left === "0px") {
         sidebar.style.left = "-250px";
-        toggleButton.style.top = "15px";
+       // toggleButton.style.top = "15px";
         toggleButton.style.left = "15px";
 
         main.classList.remove("open");
@@ -15,8 +15,8 @@ function toggleSidebar() {
         words.classList.remove("open");
     } else {
         sidebar.style.left = "0px";
-        toggleButton.style.top = "5px";
-        toggleButton.style.left = "1px";
+       // toggleButton.style.top = "5px";
+        toggleButton.style.left = "-2px";
 
         main.classList.add("open");
         toggleButton.classList.add("open");
