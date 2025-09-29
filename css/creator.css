@@ -95,18 +95,9 @@ body {
   display: flex;
 }
 
-.words {
-  display: none;
-}
-
-.words.open {
-  display: flex;
-  color: white;
-  text-decoration: none;
+.sidebar .words {
   font-size: 22px;
   font-weight: bold;
-  margin-left: 10px;
-  margin-top: 8px;
 }
 
 .container {

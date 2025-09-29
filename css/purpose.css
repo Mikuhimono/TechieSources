@@ -15,7 +15,8 @@ body {
     background-attachment: fixed;
 }
 
-.topbar { /* Account style */
+.topbar {
+    /* Account style */
     display: block;
     align-items: center;
     padding: 10px;
@@ -95,18 +96,9 @@ body {
     display: flex;
 }
 
-.words {
-    display: none;
-}
-
-.words.open {
-    display: flex;
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
-    font-weight: bold;
-    margin-left: 10px;
-    margin-top: 8px;
+.sidebar .words {
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .container {
@@ -164,6 +156,6 @@ body {
     }
 
     .topbar img {
-    margin-left: 70px;
-  }
+        margin-left: 70px;
+    }
 }
