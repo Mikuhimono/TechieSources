@@ -1,62 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ICT Research Hub | Purpose</title>
-    <link rel="stylesheet" href="../css/purpose.css"> <!-- Link to external CSS for styling(purpose.css) -->
-    <link rel="icon" type="img/png" href="../images/icon.png"> <!-- Website Icon(Tab Icon) -->
-</head>
-<body>
+    <link rel="stylesheet" href="../css/purpose.css" />
+    <!-- Link to external CSS for styling(purpose.css) -->
+    <link rel="icon" type="img/png" href="../images/icon.png" />
+    <!-- Website Icon(Tab Icon) -->
+  </head>
+  <body>
+    <div class="topbar" id="topbar"></div>
+    <!-- Account -->
 
-    <div class="topbar" id="topbar"></div> <!-- Account -->
-    
     <!-- Sidebar Toggle Button (open/closes sidebar) -->
-    <button class="toggle-btn" id="toggleButton" onclick="toggleSidebar()">&#9776;</button>
+    <button class="toggle-btn" id="toggleButton" onclick="toggleSidebar()">
+      &#9776;
+    </button>
 
     <!-- Sidebar Navigation -->
     <div class="sidebar" id="sidebar">
       <a href="home.html" class="words">ICT Research Hub</a>
-        <a href="content.html">ICT Research</a>
-        <a href="purpose.html">Purpose</a>
-        <a href="creator.html">Researchers</a>
+      <a href="content.html">ICT Research</a>
+      <a href="purpose.html">Purpose</a>
+      <a href="creator.html">Researchers</a>
     </div>
 
     <!-- Main Content-->
     <div class="container">
-        <div class="header" id="header">
-            <h1 class="title">ICT Research Hub Purpose</h1>
-            <p class="content">The primary purpose of this website is to serve as a centralized platform that compiles and organizes <span class="rrl-color">Review of Related Literature (RRL)</span> specifically within the field of <span class="ict-color">Information and Communications Technology (ICT)</span>. 
-                By providing a well-structured and accessible repository of <span class="ict-color">ICT-related references</span>, the website aims to support the <span class="rrl-color">academic and research needs of ICT students in</span> <span class="text-bold">Cainta Senior High School</span>. It is <span class="text-bold">designed to help students locate relevant literature more efficiently, thereby reducing the time and effort traditionally required in gathering research materials</span>. 
-                Moreover, this platform seeks to foster a culture of academic excellence and innovation by ensuring that students have convenient access to credible and updated scholarly resources. 
-                Ultimately, the website functions as both a learning aid and a research tool that contributes to the <span class="text-bold">development of students’ knowledge, critical thinking, and research capabilities in the ICT domain</span>.</p>
-        </div>
+      <div class="header" id="header">
+        <h1 class="title">ICT Research Hub Purpose</h1>
+        <p class="content">
+          The primary purpose of this website is to serve as a centralized
+          platform that compiles and organizes
+          <span class="rrl-color">Review of Related Literature (RRL)</span>
+          specifically within the field of
+          <span class="ict-color"
+            >Information and Communications Technology (ICT)</span
+          >. By providing a well-structured and accessible repository of
+          <span class="ict-color">ICT-related references</span>, the website
+          aims to support the
+          <span class="rrl-color"
+            >academic and research needs of ICT students in</span
+          >
+          <span class="text-bold">Cainta Senior High School</span>. It is
+          <span class="text-bold"
+            >designed to help students locate relevant literature more
+            efficiently, thereby reducing the time and effort traditionally
+            required in gathering research materials</span
+          >. Moreover, this platform seeks to foster a culture of academic
+          excellence and innovation by ensuring that students have convenient
+          access to credible and updated scholarly resources. Ultimately, the
+          website functions as both a learning aid and a research tool that
+          contributes to the
+          <span class="text-bold"
+            >development of students’ knowledge, critical thinking, and research
+            capabilities in the ICT domain</span
+          >.
+        </p>
+      </div>
     </div>
 
+    <script src="../javascript/maintenance.js"></script>
     <script src="../javascript/purpose.js"></script>
     <script>
       // Account functions (Sign In/Up, Dashboard, etc.)
-        async function loadUser() {
-          let res = await fetch("../php/user.php"); // Find the account on data/users.json
-          let data = await res.json();
-          if (data.user) {
-            let u = data.user;
-            document.getElementById("topbar").innerHTML = `
-              <img src="${u.profile_pic || '../images/icon.png'}" class="profile-pic" style="width:30px;height:30px;border-radius:50%">
-              <span class="dashb"><a href="dashboard.html">${u.nickname || u.username}</a></span>
+      async function loadUser() {
+        let res = await fetch("../php/user.php"); // Find the account on data/users.json
+        let data = await res.json();
+        if (data.user) {
+          let u = data.user;
+          let imgSrc = u.profile_pic
+            ? u.profile_pic.includes("?v=")
+              ? u.profile_pic
+              : u.profile_pic + "?v=" + Date.now()
+            : "../images/icon.png";
+          document.getElementById("topbar").innerHTML = `
+              <img src="${imgSrc}" class="profile-pic" style="width:30px;height:30px;border-radius:50%">
+              <span class="dashb"><a href="dashboard.html">${
+                u.nickname || u.username
+              }</a></span>
             `;
-          } else {
-            window.location.href = "login.html";
-          }
+        } else {
+          window.location.href = "/index.php";
         }
-      
-        async function logout() {
-          await fetch("../php/logout.php");
-          localStorage.removeItem("loggedInUser");
-          window.location.href = "login.html";
+      }
+
+      async function logout() {
+        await fetch("../php/logout.php");
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "login.html";
+      }
+
+      loadUser();
+
+      if (typeof maintenanceMode !== "undefined" && maintenanceMode === true) {
+        if (!window.location.href.includes("maintenance.html")) {
+          window.location.href = "../html/maintenance.html";
         }
-      
-        loadUser();
-      </script>
-</body>
+      }
+    </script>
+  </body>
 </html>
