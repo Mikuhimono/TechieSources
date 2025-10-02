@@ -39,6 +39,7 @@ foreach ($users as &$u) {
 
             if (move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $dest)) {
                 $u["profile_pic"] = "../profiles/" . $filename;
+                $u["profile_pic"] .= "?v=" . time();
             } else {
                 echo json_encode(["error" => "Failed to upload file"]);
                 exit;
