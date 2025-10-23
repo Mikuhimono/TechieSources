@@ -1,4 +1,5 @@
 <?php
+
 header("Content-Type: application/json");
 $dataFile = __DIR__ . "/data/users.json"; // Connect to data/users.json
 
