@@ -8,3 +8,4 @@ if (isset($_SESSION['username'])) {
     header("Location: html/login.html");
     exit();
 }
+?>
