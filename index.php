@@ -1,4 +1,10 @@
 <?php
-header("Location: html/login.html"); // Start the Website
-exit;
-?>
+session_start();
+
+if (isset($_SESSION['username'])) {
+    header("Location: html/home.html");
+    exit();
+} else {
+    header("Location: html/login.html");
+    exit();
+}
