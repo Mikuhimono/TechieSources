@@ -15,15 +15,18 @@ if ($pdfList === null) {
     die("❌ Failed to decode pdf_data.json.");
 }
 
-$missingFiles = [];
+// Extract filenames from JSON
+$jsonFiles = array_map(fn($pdf) => $pdf['filename'], $pdfList);
 
-// Check each file
-foreach ($pdfList as $pdf) {
-    $filePath = $uploadsDir . $pdf['filename'];
-    if (!file_exists($filePath)) {
-        $missingFiles[] = $pdf['filename'];
-    }
-}
+// Get all PDF files in uploads folder
+$uploadFiles = array_filter(scandir($uploadsDir), fn($f) => pathinfo($f, PATHINFO_EXTENSION) === 'pdf');
+
+// --- CHECKS ---
+// Missing files: in JSON but not in uploads
+$missingInUploads = array_filter($jsonFiles, fn($f) => !file_exists($uploadsDir . $f));
+
+// Extra files: in uploads but not in JSON
+$extraInUploads = array_filter($uploadFiles, fn($f) => !in_array($f, $jsonFiles));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +38,7 @@ foreach ($pdfList as $pdf) {
     <style>
         body {
             font-family: Arial, sans-serif;
+            padding: 20px;
         }
 
         h2 {
@@ -43,49 +47,61 @@ foreach ($pdfList as $pdf) {
 
         table {
             border-collapse: collapse;
-            width: 60%;
+            width: 70%;
             margin: 20px auto;
-            
         }
 
         th,
         td {
             border: 1px solid #ccc;
             padding: 8px;
-            text-align: center;
+            text-align: left;
         }
 
         th {
-            background: #f4f4f4;
-        }
-
-        p {
-            text-align: center;
-        }
-
-        .ok {
-            color: green;
+            background-color: #f2f2f2;
         }
 
         .missing {
             color: red;
         }
+
+        .extra {
+            color: orange;
+        }
     </style>
 </head>
 
 <body>
-    <h2>Missing PDFs Report</h2>
-    <?php if (empty($missingFiles)): ?>
-        <p class="ok">✅ No missing files. Everything matches.</p>
+    <h2>PDF Consistency Checker</h2>
+
+    <h3>❌ Missing in /uploads (listed in JSON but file not found):</h3>
+    <?php if (empty($missingInUploads)): ?>
+        <p style="text-align:center;">✅ No missing files.</p>
     <?php else: ?>
-        <p class="missing">⚠️ Missing Files Found:</p>
         <table>
             <tr>
                 <th>Filename</th>
             </tr>
-            <?php foreach ($missingFiles as $file): ?>
+            <?php foreach ($missingInUploads as $file): ?>
                 <tr>
-                    <td><?= htmlspecialchars($file) ?></td>
+                    <td class="missing"><?= htmlspecialchars($file) ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    <?php endif; ?>
+
+    <h3>⚠️ Extra in /uploads (file exists but not listed in JSON):</h3>
+    <?php if (empty($extraInUploads)): ?>
+        <p style="text-align:center;">✅ No extra files.</p>
+    <?php else: ?>
+        <table>
+            <tr>
+                <th>Filename</th>
+            </tr>
+            <?php foreach ($extraInUploads as $file): ?>
+                <tr>
+                    <td class="extra"><?= htmlspecialchars($file) ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
