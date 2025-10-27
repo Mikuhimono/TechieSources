@@ -1,8 +1,8 @@
 # PSEUDOCODE
 
-### ❗ This pseudocode is to guide others to understand how this website works. 
+# ❗ This pseudocode is to guide others to understand how this website works. 
 ----
-**THIS IS OUTDATED, We will fix this if the website is complete.**
+**THIS IS OUTDATED, We will fix this if the website is complete. Thank you!**
 ----  
 ```pgsql
 START WEBSITE
@@ -50,3 +50,4 @@ END WEBSITE
 
 
 ```
+
