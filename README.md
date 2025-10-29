@@ -4,7 +4,7 @@
 This website is for Educational purposes only.
 ---
 
-<img src="https://raw.githubusercontent.com/Mikuhimono/TechieSources/refs/heads/main/images/flowchart.png?token=GHSAT0AAAAAADNXZTF5EGYLA5VZDV65MH2K2IB6H4Q" width="20%" align="center">
+<img src="https://github.com/Mikuhimono/TechieSources/blob/main/images/flowchart.png" align="center">
 
 ---
 
