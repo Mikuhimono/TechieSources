@@ -10,8 +10,6 @@ Failure to attribute properly is a violation of copyright and may result in lega
 
 ---
 
-## Message by Developer
-
 
 ## Flowchart
 <img src="https://github.com/Mikuhimono/TechieSources/blob/main/images/flowchart.png" align="center">
