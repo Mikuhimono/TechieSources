@@ -3,8 +3,10 @@
 # TechieSources
 This website is for Educational purposes only.
 ---
-
+## Flowchart
 <img src="https://github.com/Mikuhimono/TechieSources/blob/main/images/flowchart.png" align="center">
+
+**This Flowchart is to make people understand how the website works, showing the step-by-step process and overall flow of its functions. It helps visualize how each part of the site connects — making it easier for developers and users to follow and understand the website’s logic and operation.**
 
 ---
 
