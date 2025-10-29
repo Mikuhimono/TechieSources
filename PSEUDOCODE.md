@@ -14,7 +14,7 @@ LOAD index.php
     ENDIF
 
 LOAD html/login.html (if not logged in)
-    DISPLAY website title and logo
+    DISPLAY website title
     SHOW login form (username and password)
 
 WHEN user submits login form
@@ -82,5 +82,6 @@ SEARCH FUNCTION (available only after login)
 END WEBSITE
 
 ```
+
 
 
