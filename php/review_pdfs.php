@@ -40,7 +40,7 @@ if (!isset($_SESSION['authenticated'])) {
         <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <title>ICT Research Hub | Admin Login</title>
+            <title>TechieSources | Admin Login</title>
             <link rel="icon" type="image/png" href="../images/school.png">
             <style>
                 body {
@@ -95,7 +95,7 @@ if (!isset($_SESSION['authenticated'])) {
         </head>
         <body>
             <div class="login-box">
-                <h2>Admin Login</h2>
+                <h2>TechieSources Admin Login</h2>
                 <?php if (isset($error)): ?>
                     <p class="error"><?php echo $error; ?></p>
                 <?php endif; ?>
@@ -137,7 +137,7 @@ file_put_contents(__DIR__ . '/../duplicate.json', json_encode($duplicates, JSON_
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ICT Research Hub | Duplicate Checker</title>
+    <title>TechieSources | Duplicate Checker</title>
     <link rel="icon" type="image/png" href="../images/icon.png">
     <style>
         body {

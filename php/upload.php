@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ICT Research Hub | Upload</title>
+    <title>TechieSources | Upload</title>
     <link rel="icon" type="image/png" href="../images/icon.png">
     <style>
         body {

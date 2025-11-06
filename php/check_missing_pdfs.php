@@ -33,7 +33,7 @@ $extraInUploads = array_filter($uploadFiles, fn($f) => !in_array($f, $jsonFiles)
 
 <head>
     <meta charset="UTF-8">
-    <title>ICT Research Hub | Missing PDF Checker</title>
+    <title>TechieSources | Missing PDF Checker</title>
     <link rel="icon" type="image/png" href="../images/icon.png">
     <style>
         body {
