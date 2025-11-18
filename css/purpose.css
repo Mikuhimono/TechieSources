@@ -97,8 +97,8 @@ body {
 }
 
 .sidebar .words {
-  font-size: 22px;
-  font-weight: bold;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .container {
@@ -152,6 +152,11 @@ body {
 @media all and (max-width: 768px) {
 
     /* Other device style */
+
+    body {
+        background-position: calc(50% - 10px) calc(10% - 0px);
+    }
+
     .header h1 {
         margin-top: 50px;
     }
