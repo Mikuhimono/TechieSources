@@ -8,14 +8,15 @@ body {
 
 body {
   /* Background gradient styling */
-  background: linear-gradient(to bottom, #CDB4DB, #FFC8DD, #FFAFCC, #BDE0FE, #A2D2FF);
-  background-position: center;
+  background: url("../images/schoolBg.jpg");
+  background-position: calc(100% - 0px) calc(80% - 0px);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
-.topbar { /* Account style */
+.topbar {
+  /* Account style */
   display: block;
   align-items: center;
   padding: 10px;
@@ -37,7 +38,7 @@ body {
 
 .topbar a {
   text-decoration: none;
-  color: darkblue;
+  color: #e3ecf8;
   font-weight: bold;
   margin-left: 5px;
 }
@@ -112,7 +113,7 @@ body {
   /* "Meet the Researcher" style */
   font-size: 2.5rem;
   margin-left: 25rem;
-  color: #333;
+  color: #e3ecf8;
   margin-bottom: 1.5rem;
   padding: 20px 10px 20px 10px;
   transition: margin-left 0.5s ease;
@@ -126,7 +127,7 @@ body {
 
 .creator-card {
   /* Card style */
-  background: rgba(12, 12, 13, 1)white;
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
   padding: 1rem;
   width: 250px;
@@ -180,6 +181,11 @@ body {
 @media all and (max-width: 768px) {
 
   /* Other device style */
+
+  body {
+    background-position: calc(50% - 10px) calc(10% - 0px);
+  }
+
   .title {
     font-size: 2.3rem;
     margin-left: 1rem;

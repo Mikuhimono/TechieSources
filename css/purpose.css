@@ -8,8 +8,8 @@ body {
 
 body {
     /* Background gradient styling */
-    background: linear-gradient(to bottom, #CDB4DB, #FFC8DD, #FFAFCC, #BDE0FE, #A2D2FF);
-    background-position: center;
+    background: url("../images/schoolBg.jpg");
+    background-position: calc(100% - 0px) calc(80% - 0px);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -38,7 +38,7 @@ body {
 
 .topbar a {
     text-decoration: none;
-    color: darkblue;
+    color: #e3ecf8;
     font-weight: bold;
     margin-left: 5px;
 }
@@ -118,13 +118,14 @@ body {
 
 .header h1 {
     font-size: 2.5em;
-    color: #333;
+    color: #e3ecf8;
     margin-bottom: 20px;
 }
 
 .header p {
+    background-color: rgba(0, 0, 0, 0.6);
     font-size: 22px;
-    color: #666;
+    color: #12d8e6;
     margin-top: 40px;
     letter-spacing: 1px;
     word-spacing: 2px;

@@ -8,14 +8,15 @@ body {
 
 body {
   /* Background gradient styling */
-  background: linear-gradient(to bottom, #CDB4DB, #FFC8DD, #FFAFCC, #BDE0FE, #A2D2FF);
-  background-position: center;
+  background: url("../images/schoolBg.jpg");
+  background-position: calc(100% - 0px) calc(80% - 0px);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
-.topbar { /* Account style */
+.topbar {
+  /* Account style */
   display: block;
   align-items: center;
   padding: 10px;
@@ -37,7 +38,7 @@ body {
 
 .topbar a {
   text-decoration: none;
-  color: darkblue;
+  color: #e3ecf8;
   font-weight: bold;
   margin-left: 5px;
 }
@@ -118,7 +119,7 @@ body {
 }
 
 .logo .indigo {
-  color: #3f51b5;
+  color: #4974e9;
   font-size: 60px;
 }
 
@@ -164,7 +165,32 @@ body {
 
 @media all and (max-width: 768px) {
 
+
+  body {
+    background-position: calc(50% - 10px) calc(10% - 0px);
+  }
+
   .topbar img {
     margin-left: 70px;
+  }
+
+  .logo .indigo {
+    font-size: 45px;
+  }
+
+  .logo .cyan {
+    font-size: 45px;
+  }
+
+  .logo .amber {
+    font-size: 45px;
+  }
+
+  .logo .green {
+    font-size: 45px;
+  }
+
+  .logo .gray {
+    font-size: 45px;
   }
 }
