@@ -1,4 +1,4 @@
-<img src="../github_img/" width="10%" align="center">
+<img src="https://raw.githubusercontent.com/Mikuhimono/TechieSources/refs/heads/main/github_img/2cc215e3-c44b-4735-9517-ac28c3087676.jfif?token=GHSAT0AAAAAADNXZTF5WJUYMKQRSIL4Q7NC2JNCPFA" width="10%" align="center">
 
 # TechieSources
 
