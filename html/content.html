@@ -44,7 +44,7 @@
       </form>
 
       <!-- Upload Form for new PDF research -->
-      <div class="upload">
+      <div class="upload" id="upload">
         <form
           action="../php/upload.php"
           method="post"
@@ -119,6 +119,14 @@
           window.location.href = "../html/maintenance.html";
         }
       }
+
+      fetch("../php/session_check.php")
+        .then((r) => r.json())
+        .then((data) => {
+          if (data.role !== "admin") {
+            document.getElementById("upload").style.display = "none";
+          }
+        });
     </script>
   </body>
 </html>
