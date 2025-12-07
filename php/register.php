@@ -30,7 +30,8 @@ $newUser = [
     "password" => password_hash($password, PASSWORD_DEFAULT),
     "nickname" => $username,
     "profile_pic" => "/images/starter.png",
-    "created" => date("c")
+    "created" => date("c"),
+    "role" => "user"
 ];
 
 $users[] = $newUser;

@@ -15,6 +15,8 @@ foreach ($users as $u) {
     if (($u["username"] === $username || $u["email"] === $username) && password_verify($password, $u["password"])) {
         session_start();
         $_SESSION["username"] = $u["username"];
+        $_SESSION["role"] = $u["role"];
+       // echo json_encode(["success" => true, "role" => $u["role"]]);
         echo json_encode(["success" => true, "user" => $u]); // SUCCESSFUL
         exit;
     }
