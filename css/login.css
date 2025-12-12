@@ -1,3 +1,8 @@
+/*
+This file is for design in the Login and Register Page
+(YOU CAN CHANGE THIS BUT MAKE SURE TO FIT IT IN THE WEBSITE)
+*/
+
 body { /* Body styles */
     font-family: Arial, sans-serif;
     display: flex;
@@ -160,4 +165,5 @@ body::before {
 .msg {
     margin-top: 10px;
     font-size: 14px;
+
 }
