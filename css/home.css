@@ -1,3 +1,8 @@
+/*
+This file is for design in Home page of the website
+(IF YOU ARE PROFESSIONAL, YOU CAN CHANGE THIS BUT MAKE SURE TO FIT IT IN THE WEBSITE)
+*/
+
 body {
   /* Set Default font and center text */
   margin: 0;
@@ -193,4 +198,5 @@ body {
   .logo .gray {
     font-size: 45px;
   }
+
 }
