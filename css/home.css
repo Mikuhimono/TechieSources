@@ -1,8 +1,3 @@
-/*
-This file is for design in Home page of the website
-(IF YOU ARE PROFESSIONAL, YOU CAN CHANGE THIS BUT MAKE SURE TO FIT IT IN THE WEBSITE)
-*/
-
 body {
   /* Set Default font and center text */
   margin: 0;
@@ -123,7 +118,12 @@ body {
   animation: bounce 5s infinite ease-in-out;
 }
 
-.logo .indigo {
+.logo span {
+  font-size: 60px;
+  color: rgba(56, 226, 113, 0.8);
+}
+
+/*.logo .indigo {
   color: #4974e9;
   font-size: 60px;
 }
@@ -146,7 +146,7 @@ body {
 .logo .gray {
   color: #555;
   font-size: 60px;
-}
+}*/
 
 @keyframes bounce {
   /* Animation */
@@ -198,5 +198,4 @@ body {
   .logo .gray {
     font-size: 45px;
   }
-
 }
