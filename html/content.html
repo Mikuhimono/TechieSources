@@ -81,6 +81,12 @@
       <!-- RRL List -->
     </div>
 
+    <div class="pagination">
+      <button id="prevBtn" disabled>Previous</button>
+      <span id="pageInfo"></span>
+      <button id="nextBtn">Next</button>
+    </div>
+
     <script src="../javascript/content.js"></script>
     <script src="../javascript/maintenance.js"></script>
     <script>
@@ -127,6 +133,50 @@
             document.getElementById("upload").style.display = "none";
           }
         });
+
+      const itemsPerPage = 5;
+      let currentPage = 1;
+
+      function paginatePDFs() {
+        const items = document.querySelectorAll("#pdfList > *");
+        const totalPages = Math.ceil(items.length / itemsPerPage);
+
+        items.forEach((item, index) => {
+          item.style.display =
+            index >= (currentPage - 1) * itemsPerPage &&
+            index < currentPage * itemsPerPage
+              ? "block"
+              : "none";
+        });
+
+        document.getElementById(
+          "pageInfo"
+        ).textContent = `Page ${currentPage} of ${totalPages || 1}`;
+
+        document.getElementById("prevBtn").disabled = currentPage === 1;
+        document.getElementById("nextBtn").disabled =
+          currentPage === totalPages || totalPages === 0;
+      }
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          paginatePDFs();
+        }
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        const totalItems = document.querySelectorAll("#pdfList > *").length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          paginatePDFs();
+        }
+      });
+
+      // Re-run pagination after PDFs load
+      const observer = new MutationObserver(() => paginatePDFs());
+      observer.observe(document.getElementById("pdfList"), { childList: true });
     </script>
   </body>
 </html>
