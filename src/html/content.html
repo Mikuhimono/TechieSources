@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechieSources | Research</title>
+    <link rel="stylesheet" href="../src/css/content.css" />
+    <!-- Link to external CSS for styling(content.css) -->
+    <link rel="icon" type="image/png" href="../src/images/icon.png" />
+    <!-- Website Icon(Tab Icon) -->
+  </head>
+  <body>
+    <div class="topbar" id="topbar"></div>
+    <!-- Account -->
+
+    <!-- Sidebar Toggle Button (open/closes sidebar) -->
+    <button class="toggle-btn" id="toggleButton" onclick="toggleSidebar()">
+      &#9776;
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+      <a href="home.html" class="words">TechieSources</a>
+      <a href="content.html">Literatures</a>
+      <a href="purpose.html">Purpose</a>
+      <a href="creator.html">Researchers</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <h1>TechieSources</h1>
+
+      <!-- Search and Filter Form -->
+      <form id="searchForm">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search Literatures..."
+        />
+        <select id="yearSelect">
+          <option value="">All Years</option>
+          <!-- Options will be added dynamically by JavaScript -->
+        </select>
+      </form>
+
+      <!-- Upload Form for new PDF research -->
+      <div class="upload" id="upload">
+        <form
+          action="../src/php/upload.php"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input type="text" name="title" placeholder="Title" required />
+          <select name="year" required>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <!-- More years available -->
+          </select>
+          <input
+            type="file"
+            name="pdf_file"
+            accept="application/pdf"
+            required
+          />
+          <!-- RRL PDF Uploader Input -->
+          <button type="submit" class="upload-btn">Upload PDF</button>
+          <!-- Upload Button -->
+        </form>
+      </div>
+
+      <div id="pdfList"></div>
+      <!-- RRL List -->
+    </div>
+
+    <div class="pagination">
+      <button id="prevBtn" disabled>Previous</button>
+      <span id="pageInfo"></span>
+      <button id="nextBtn">Next</button>
+    </div>
+
+    <script src="../src/javascript/content.js"></script>
+    <script src="../src/javascript/maintenance.js"></script>
+    <script>
+      // Account functions (Sign In/Up, Dashboard, etc.)
+      async function loadUser() {
+        let res = await fetch("../src/php/user.php"); // Find the account on data/users.json
+        let data = await res.json();
+        if (data.user) {
+          let u = data.user;
+          let imgSrc = u.profile_pic
+            ? u.profile_pic.includes("?v=")
+              ? u.profile_pic
+              : u.profile_pic + "?v=" + Date.now()
+            : "../src/images/icon.png";
+          document.getElementById("topbar").innerHTML = `
+              <img src="${imgSrc}" class="profile-pic" style="width:30px;height:30px;border-radius:50%">
+              <span class="dashb"><a href="dashboard.html">${
+                u.nickname || u.username
+              }</a></span>
+            `;
+        } else {
+          window.location.href = "../index.php";
+        }
+      }
+
+      async function logout() {
+        await fetch("../src/php/logout.php");
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "login.html";
+      }
+
+      loadUser();
+
+      if (typeof maintenanceMode !== "undefined" && maintenanceMode === true) {
+        if (!window.location.href.includes("maintenance.html")) {
+          window.location.href = "../src/html/maintenance.html";
+        }
+      }
+
+      fetch("../src/php/session_check.php")
+        .then((r) => r.json())
+        .then((data) => {
+          if (data.role !== "admin") {
+            document.getElementById("upload").style.display = "none";
+          }
+        });
+
+      const itemsPerPage = 5;
+      let currentPage = 1;
+
+      function paginatePDFs() {
+        const items = document.querySelectorAll("#pdfList > *");
+        const totalPages = Math.ceil(items.length / itemsPerPage);
+
+        items.forEach((item, index) => {
+          item.style.display =
+            index >= (currentPage - 1) * itemsPerPage &&
+            index < currentPage * itemsPerPage
+              ? "block"
+              : "none";
+        });
+
+        document.getElementById(
+          "pageInfo"
+        ).textContent = `Page ${currentPage} of ${totalPages || 1}`;
+
+        document.getElementById("prevBtn").disabled = currentPage === 1;
+        document.getElementById("nextBtn").disabled =
+          currentPage === totalPages || totalPages === 0;
+      }
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          paginatePDFs();
+        }
+      });
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        const totalItems = document.querySelectorAll("#pdfList > *").length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          paginatePDFs();
+        }
+      });
+
+      // Re-run pagination after PDFs load
+      const observer = new MutationObserver(() => paginatePDFs());
+      observer.observe(document.getElementById("pdfList"), { childList: true });
+    </script>
+  </body>
+</html>

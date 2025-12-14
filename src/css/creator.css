@@ -1,0 +1,207 @@
+body {
+  /* Set Default font and center text */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+body {
+  /* Background gradient styling */
+  background: url("../src/images/schoolBg.jpg");
+  background-position: calc(100% - 0px) calc(80% - 0px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.topbar {
+  /* Account style */
+  display: block;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 200px;
+  z-index: 1000;
+}
+
+.topbar img {
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: -10px;
+  margin-left: 10px;
+}
+
+.topbar a {
+  text-decoration: none;
+  color: #e3ecf8;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.topbar a:hover {
+  text-decoration: underline;
+}
+
+.sidebar {
+  /* Sidebar styles */
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: rgba(0, 0, 0, 0.85);
+  overflow: hidden;
+  transition: left 0.7s ease;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidebar a {
+  /* Sidebar links style */
+  display: block;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 15px;
+  color: white;
+  transition: background 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+}
+
+.toggle-btn {
+  /* Sidebar Toggle Button */
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 30px;
+  color: gray;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1100;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: top 0.5s ease, left 0.5s ease;
+}
+
+.toggle-btn.open {
+  display: flex;
+}
+
+.sidebar .words {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.container {
+  /* Main style */
+  text-align: center;
+  width: 100%;
+  transition: margin-left 0.3s ease;
+  max-width: 1000px;
+}
+
+.title {
+  /* "Meet the Researcher" style */
+  font-size: 2.5rem;
+  margin-left: 25rem;
+  color: #e3ecf8;
+  margin-bottom: 1.5rem;
+  padding: 20px 10px 20px 10px;
+  transition: margin-left 0.5s ease;
+}
+
+.creators-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.creator-card {
+  /* Card style */
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 250px;
+  margin-left: 13.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+.creator-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.creator-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.creator-name {
+  font-size: 1.2rem;
+  color: #222;
+  margin: 0.5rem 0;
+}
+
+.creator-role {
+  font-size: 1rem;
+  color: #222;
+  margin: 0.5rem 0;
+}
+
+.creator-email {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@keyframes fadeInUp {
+
+  /* Animation */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media all and (max-width: 768px) {
+
+  /* Other device style */
+
+  body {
+    background-position: calc(50% - 10px) calc(10% - 0px);
+  }
+
+  .title {
+    font-size: 2.3rem;
+    margin-left: 1rem;
+    margin-top: 4rem;
+  }
+
+  .title.open {
+    margin-left: 17rem;
+  }
+
+  .creator-card {
+    padding: -1rem;
+    margin-left: 2.5rem;
+  }
+
+  .topbar img {
+    margin-left: 70px;
+  }
+}

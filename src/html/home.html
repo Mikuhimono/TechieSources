@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechieSources</title>
+    <link rel="stylesheet" href="../src/css/home.css" />
+    <!-- Link to external CSS for styling(home.css) -->
+    <link rel="icon" type="image/png" href="../src/images/icon.png" />
+    <!-- Website Icon(Tab Icon) -->
+  </head>
+
+  <body>
+    <div class="topbar" id="topbar"></div>
+    <!-- Account -->
+
+    <!-- Sidebar Toggle Button (open/closes sidebar) -->
+    <button class="toggle-btn" id="toggleButton" onclick="toggleSidebar()">
+      &#9776;
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+      <a href="home.html" class="words">TechieSources</a>
+      <a href="content.html">Literatures</a>
+      <a href="purpose.html">Purpose</a>
+      <a href="creator.html">Researchers</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" id="main">
+      <div class="logo">
+        <span>Techie Sources</span>
+        <!--<span class="cyan">ie</span>
+        <span class="amber">Sou</span>
+        <span class="green">rce</span>
+        <span class="gray">s</span>-->
+      </div>
+    </div>
+
+    <script src="../src/javascript/maintenance.js"></script>
+    <script src="../src/javascript/home.js"></script>
+    <script>
+      // Account functions (Sign In/Up, Dashboard, etc.)
+      async function loadUser() {
+        let res = await fetch("../src/php/user.php"); // Find the account on data/users.json
+        let data = await res.json();
+        if (data.user) {
+          let u = data.user;
+          let imgSrc = u.profile_pic
+            ? u.profile_pic.includes("?v=")
+              ? u.profile_pic
+              : u.profile_pic + "?v=" + Date.now()
+            : "../src/images/icon.png";
+          document.getElementById("topbar").innerHTML = `
+              <img src="${imgSrc}" class="profile-pic" style="width:30px;height:30px;border-radius:50%">
+              <span class="dashb"><a href="dashboard.html">${
+                u.nickname || u.username
+              }</a></span>
+            `;
+        } else {
+          window.location.href = "../index.php";
+        }
+      }
+
+      async function logout() {
+        await fetch("../src/php/logout.php");
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "login.html";
+      }
+
+      loadUser();
+
+      if (typeof maintenanceMode !== "undefined" && maintenanceMode === true) {
+        if (!window.location.href.includes("maintenance.html")) {
+          window.location.href = "../src/html/maintenance.html";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,262 @@
+body {
+  /* Set Default font and center text */
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+body {
+  /* Background gradient styling */
+  background: url("../src/images/schoolBg.jpg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0px) calc(80% - 0px);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.topbar { /* Account style */
+  display: block;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 200px;
+  z-index: 1000;
+}
+
+.topbar img {
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: -10px;
+  margin-left: 10px;
+}
+
+.topbar a {
+  text-decoration: none;
+  color: #e3ecf8;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.topbar a:hover {
+  text-decoration: underline;
+}
+
+.sidebar {
+  /* Sidebar styles */
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  transition: left 0.7s ease;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidebar a {
+  /* Sidebar links style */
+  display: block;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 15px;
+  color: white;
+  transition: background 0.45s;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+}
+
+.toggle-btn {
+  /* Sidebar Toggle Button */
+  position: fixed;
+  top: 15px;
+  left: 4px;
+  font-size: 30px;
+  color: gray;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 1100;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: top 0.5s ease, left 0.5s ease;
+}
+
+.toggle-btn.open {
+  display: flex;
+}
+
+.sidebar .words {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.container {
+  /* Main Content Style */
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #e3ecf8;
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  margin: 5px;
+  opacity: 0.8;
+}
+
+#pdfList {
+  /* RRL list style */
+  margin-top: 20px;
+  text-align: left;
+}
+
+.pdf-entry {
+  position: relative;
+  padding: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  z-index: 1;
+  overflow: hidden;
+  background: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.pdf-entry::before {
+  /* RRL style */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  background-position: calc(100% - 0px) calc(60% - 0px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: unset;
+  opacity: 0.9;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+
+.pdfTitle {
+  /* RRL title */
+  color: #333;
+
+}
+
+.pdfViewer {
+  /* RRL View Button */
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.pdfViewer:hover {
+  background: #3a7bd5;
+  transition: background 0.6s ease;
+}
+
+.pdfDownload {
+  /* RRL Download Button */
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.pdfDownload:hover {
+  background: #4facfe;
+  transition: background 0.6s ease;
+}
+
+.upload-btn {
+  /* Upload Button style */
+  color: black;
+  background-color: white;
+  transition: color 0.3s ease-in, background-color 0.3s ease-in;
+  border: 1px solid gray;
+}
+
+.upload-btn:hover {
+  color: red;
+  background-color: gray;
+  transition: background 0.4s ease-out, color 0.4s ease-out;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.pagination span {
+  font-weight: bold;
+  color: #e3ecf8;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media all and (max-width: 768px) {
+  /* Other device style */
+
+    body {
+        background-position: calc(50% - 10px) calc(10% - 0px);
+    }
+    
+  .container {
+    margin-top: 40px;
+  }
+
+  .topbar {
+    height: 10vh;
+    position: absolute;
+  }
+    
+  input,
+  select,
+  button {
+    padding: 8px;
+    margin: 1.5px;
+  }
+
+  .pdf-entry::before {
+    background-position: calc(50% - 0px) calc(10% - 0px);
+  }
+
+  .topbar img {
+    margin-left: 70px;
+  }
+}
