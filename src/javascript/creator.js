@@ -5,43 +5,43 @@ document.addEventListener("DOMContentLoaded", () => {
             name: "Alyssa Almonte",
             email: "",
             role: "Leader",
-            image: "../src/images/icon.png"
+            image: "/src/images/icon.png"
         },
         {
             name: "Mark Ambrocio",
             email: "",
             role: "Assistant Leader",
-            image: "../src/images/icon.png"
+            image: "/src/images/icon.png"
         },
         {
             name: "Clark Joven Bernandino",
             email: "",
             role: "Member",
-            image: "../src/images/icon.png"
+            image: "/src/images/icon.png"
         },
         {
             name: "Allysa Ballares",
             email: "",
             role: "Member",
-            image: "../src/images/icon.png"
+            image: "/src/images/icon.png"
         },
         {
             name: "Kyla Mae Bagnate",
             email: "",
             role: "Member",
-            image: "../src/images/icon.png"
+            image: "/src/images/icon.png"
         },
         {
             name: "Rolando Batobato",
             email: "",
             role: "Member",
-            image: "../src/images/icon.png"
+            image: "/src/images/icon.png"
         },
         {
             name: "Mike Alcaraz",
             email: "",
             role: "Member",
-            image: "../src/images/icon.png"
+            image: "/src/images/icon.png"
         }
     ];
 

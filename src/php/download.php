@@ -1,6 +1,6 @@
 <?php
 $filename = $_GET['file']; // Find file
-$filepath = "../src/uploads/" . basename($filename); // Folder where files are stored
+$filepath = "../uploads/" . basename($filename); // Folder where files are stored
 
 // Check if file exists
 if (file_exists($filepath)) {

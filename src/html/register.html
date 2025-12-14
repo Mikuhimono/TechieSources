@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>TechieSources | Register</title>
-    <link rel="icon" type="image/png" href="../src/images/icon.png" />
-    <link rel="stylesheet" href="../src/css/login.css" />
+    <link rel="icon" type="image/png" href="/src/images/icon.png" />
+    <link rel="stylesheet" href="/src/css/login.css" />
   </head>
 
   <body>
@@ -36,9 +36,9 @@
       <div id="msg"></div>
     </div>
 
-    <script src="../src/javascript/maintenance.js"></script>
+    <script src="/src/javascript/maintenance.js"></script>
     <script>
-      fetch("../src/php/session_check.php")
+      fetch("/src/php/session_check.php")
       .then(response => response.text())
       .then(status => {
         if (status.trim() === 'logged_in') {
@@ -58,7 +58,7 @@
           msg.innerText = "Please fill in all fields.";
           return;
         }
-        let res = await fetch("../src/php/register.php", {
+        let res = await fetch("/src/php/register.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username, email, password }),
@@ -85,7 +85,7 @@
 
       if (typeof maintenanceMode !== "undefined" && maintenanceMode === true) {
         if (!window.location.href.includes("maintenance.html")) {
-          window.location.href = "../src/html/maintenance.html";
+          window.location.href = "/src/html/maintenance.html";
         }
       }
     </script>

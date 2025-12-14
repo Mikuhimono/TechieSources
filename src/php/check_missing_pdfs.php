@@ -1,7 +1,7 @@
 <?php
 // Path to JSON and uploads folder
-$jsonFile = __DIR__ . '/../src/pdf_data.json';
-$uploadsDir = __DIR__ . '/../src/uploads/';
+$jsonFile = __DIR__ . '/../pdf_data.json';
+$uploadsDir = __DIR__ . '/../uploads/';
 
 // Read JSON data
 if (!file_exists($jsonFile)) {
@@ -34,7 +34,7 @@ $extraInUploads = array_filter($uploadFiles, fn($f) => !in_array($f, $jsonFiles)
 <head>
     <meta charset="UTF-8">
     <title>TechieSources | Missing PDF Checker</title>
-    <link rel="icon" type="image/png" href="../src/images/icon.png">
+    <link rel="icon" type="image/png" href="/src/images/icon.png">
     <style>
         body {
             font-family: Arial, sans-serif;

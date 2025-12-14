@@ -3,8 +3,8 @@ $search = $_GET['search'] ?? ''; // optional search string from query
 $year = $_GET['year'] ?? ''; // optional year filter
 $data = [];
 
-if (file_exists("../src/pdf_data.json")) { // JSON file acts as a tiny database
-    $json = file_get_contents("../src/pdf_data.json"); // load metadata
+if (file_exists("../pdf_data.json")) { // JSON file acts as a tiny database
+    $json = file_get_contents("../pdf_data.json"); // load metadata
     $data = json_decode($json, true); // parse into PHP array
 }
 

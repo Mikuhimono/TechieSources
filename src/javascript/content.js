@@ -17,7 +17,7 @@ function fetchPDFs() {
   const year = yearSelect.value;
 
   // Call PHP backend with query parameters
-  fetch(`../src/php/fetch_pdfs.php?search=${search}&year=${year}`)
+  fetch(`/src/php/fetch_pdfs.php?search=${search}&year=${year}`)
     .then((res) => res.json()) // Expect JSON
     .then((data) => {
       pdfList.innerHTML = ""; // Clear old results
@@ -30,8 +30,8 @@ function fetchPDFs() {
         div.classList.add("pdf-entry");
         div.innerHTML = `
             <h3 class="pdfTitle">${pdf.title} (${pdf.year})</h3>
-            <a href="../src/php/view.php?file=${pdf.filename}" target="_blank" class="pdfViewer">View</a>
-            <a href="../src/php/download.php?file=${pdf.filename}" class="pdfDownload">Download</a>
+            <a href="/src/php/view.php?file=${pdf.filename}" target="_blank" class="pdfViewer">View</a>
+            <a href="/src/php/download.php?file=${pdf.filename}" class="pdfDownload">Download</a>
             `;
         pdfList.appendChild(div);
       });

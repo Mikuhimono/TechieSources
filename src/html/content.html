@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TechieSources | Research</title>
-    <link rel="stylesheet" href="../src/css/content.css" />
+    <link rel="stylesheet" href="/src/css/content.css" />
     <!-- Link to external CSS for styling(content.css) -->
-    <link rel="icon" type="image/png" href="../src/images/icon.png" />
+    <link rel="icon" type="image/png" href="/src/images/icon.png" />
     <!-- Website Icon(Tab Icon) -->
   </head>
   <body>
@@ -46,7 +46,7 @@
       <!-- Upload Form for new PDF research -->
       <div class="upload" id="upload">
         <form
-          action="../src/php/upload.php"
+          action="/src/php/upload.php"
           method="post"
           enctype="multipart/form-data"
         >
@@ -87,12 +87,12 @@
       <button id="nextBtn">Next</button>
     </div>
 
-    <script src="../src/javascript/content.js"></script>
-    <script src="../src/javascript/maintenance.js"></script>
+    <script src="/src/javascript/content.js"></script>
+    <script src="/src/javascript/maintenance.js"></script>
     <script>
       // Account functions (Sign In/Up, Dashboard, etc.)
       async function loadUser() {
-        let res = await fetch("../src/php/user.php"); // Find the account on data/users.json
+        let res = await fetch("/src/php/user.php"); // Find the account on data/users.json
         let data = await res.json();
         if (data.user) {
           let u = data.user;
@@ -100,7 +100,7 @@
             ? u.profile_pic.includes("?v=")
               ? u.profile_pic
               : u.profile_pic + "?v=" + Date.now()
-            : "../src/images/icon.png";
+            : "/src/images/icon.png";
           document.getElementById("topbar").innerHTML = `
               <img src="${imgSrc}" class="profile-pic" style="width:30px;height:30px;border-radius:50%">
               <span class="dashb"><a href="dashboard.html">${
@@ -108,12 +108,12 @@
               }</a></span>
             `;
         } else {
-          window.location.href = "../index.php";
+          window.location.href = "/index.php";
         }
       }
 
       async function logout() {
-        await fetch("../src/php/logout.php");
+        await fetch("/src/php/logout.php");
         localStorage.removeItem("loggedInUser");
         window.location.href = "login.html";
       }
@@ -122,11 +122,11 @@
 
       if (typeof maintenanceMode !== "undefined" && maintenanceMode === true) {
         if (!window.location.href.includes("maintenance.html")) {
-          window.location.href = "../src/html/maintenance.html";
+          window.location.href = "/src/html/maintenance.html";
         }
       }
 
-      fetch("../src/php/session_check.php")
+      fetch("/src/php/session_check.php")
         .then((r) => r.json())
         .then((data) => {
           if (data.role !== "admin") {

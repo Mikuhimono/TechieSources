@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>TechieSources | Dashboard</title>
-    <link rel="icon" type="image/png" href="../src/images/icon.png" />
+    <link rel="icon" type="image/png" href="/src/images/icon.png" />
     <style>
       body {
         /* Background gradient styling */
@@ -114,7 +114,7 @@
       <p>
         <a href="home.html" class="home">🏠 Home</a> |
         <a
-          href="../src/php/logout.php"
+          href="/src/php/logout.php"
           onclick="logout(); return false;"
           class="logout"
           >🚪 Logout</a
@@ -122,10 +122,10 @@
       </p>
     </div>
 
-    <script src="../src/javascript/maintenance.js"></script>
+    <script src="/src/javascript/maintenance.js"></script>
     <script>
       async function loadUser() {
-        let res = await fetch("../src/php/user.php"); // Find the account on data/users.json
+        let res = await fetch("/src/php/user.php"); // Find the account on data/users.json
         let data = await res.json();
         if (data.user) {
           let u = data.user;
@@ -133,7 +133,7 @@
             ? u.profile_pic.includes("?v=")
               ? u.profile_pic
               : u.profile_pic + "?v=" + Date.now()
-            : "../src/images/icon.png";
+            : "/src/images/icon.png";
           document.getElementById("profile").innerHTML = `
           <img src="${imgSrc}" class="profile-pic"><br>
           <strong>Username: @${u.username} (${u.nickname})</strong><br>
@@ -141,7 +141,7 @@
         `;
           document.getElementById("nickname").value = u.nickname || "";
         } else {
-          window.location.href = "../index.php";
+          window.location.href = "/index.php";
         }
       }
 
@@ -152,7 +152,7 @@
           e.preventDefault();
           let formData = new FormData(document.getElementById("updateForm"));
 
-          let res = await fetch("../src/php/update.php", {
+          let res = await fetch("/src/php/update.php", {
             method: "POST",
             body: formData,
           });
@@ -166,7 +166,7 @@
         });
 
       async function logout() {
-        await fetch("../src/php/logout.php");
+        await fetch("/src/php/logout.php");
         localStorage.removeItem("loggedInUser");
         window.location.href = "login.html";
       }
@@ -175,7 +175,7 @@
 
       if (typeof maintenanceMode !== "undefined" && maintenanceMode === true) {
         if (!window.location.href.includes("maintenance.html")) {
-          window.location.href = "../src/html/maintenance.html";
+          window.location.href = "/src/html/maintenance.html";
         }
       }
     </script>

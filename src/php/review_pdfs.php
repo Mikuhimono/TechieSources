@@ -41,7 +41,7 @@ if (!isset($_SESSION['authenticated'])) {
         <head>
             <meta charset="UTF-8">
             <title>TechieSources | Admin Login</title>
-            <link rel="icon" type="image/png" href="../src/images/school.png">
+            <link rel="icon" type="image/png" href="/src/images/school.png">
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -114,7 +114,7 @@ if (!isset($_SESSION['authenticated'])) {
 // ==========================
 // If authenticated, run duplicate check
 // ==========================
-$uploadDir = __DIR__ . '/../src/uploads';
+$uploadDir = __DIR__ . '/../uploads';
 $files = scandir($uploadDir);
 
 $pdfs = [];
@@ -131,14 +131,14 @@ foreach ($files as $file) {
     }
 }
 
-file_put_contents(__DIR__ . '/../src/duplicate.json', json_encode($duplicates, JSON_PRETTY_PRINT));
+file_put_contents(__DIR__ . '/../duplicate.json', json_encode($duplicates, JSON_PRETTY_PRINT));
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>TechieSources | Duplicate Checker</title>
-    <link rel="icon" type="image/png" href="../src/images/icon.png">
+    <link rel="icon" type="image/png" href="/src/images/icon.png">
     <style>
         body {
             font-family: Arial, sans-serif;

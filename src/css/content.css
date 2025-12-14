@@ -6,7 +6,7 @@ body {
 
 body {
   /* Background gradient styling */
-  background: url("../src/images/schoolBg.jpg");
+  background: url("/src/images/schoolBg.jpg");
   background-repeat: no-repeat;
   background-position: calc(100% - 0px) calc(80% - 0px);
   background-size: cover;

@@ -18,7 +18,7 @@ if ($isMobile && !($isFirefox || $isIOS)) {
 
 if (isset($_GET['file'])) {
     $filename = basename($_GET['file']);
-    $filepath = "../src/uploads/" . $filename;
+    $filepath = "../uploads/" . $filename;
 
     if (file_exists($filepath)) {
         header('Content-Type: application/pdf'); // force PDF response
