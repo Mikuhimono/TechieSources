@@ -1,1 +1,0 @@
-const maintenanceMode = false; // true = enable maintenance, false = normal site
