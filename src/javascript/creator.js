@@ -2,46 +2,46 @@
 document.addEventListener("DOMContentLoaded", () => {
     const creators = [
         {
-            name: "Alyssa Almonte",
+            name: "",
             email: "",
             role: "Leader",
-            image: "/src/Group4_pictures/alyssa.jpeg"
+            image: "/"
         },
         {
-            name: "Mark Ambrocio",
+            name: "",
             email: "",
             role: "Assistant Leader",
-            image: "/src/Group4_pictures/mark.jpeg"
+            image: "/"
         },
         {
-            name: "Clark Joven Bernandino",
+            name: "",
             email: "",
             role: "Member",
-            image: "/src/Group4_pictures/clark.jpeg"
+            image: "/"
         },
         {
-            name: "Allysa Ballares",
+            name: "",
             email: "",
             role: "Member",
-            image: "/src/Group4_pictures/allysa.jpeg"
+            image: "/"
         },
         {
-            name: "Kyla Mae Bagnate",
+            name: "",
             email: "",
             role: "Member",
-            image: "/src/Group4_pictures/kyla.jpeg"
+            image: "/"
         },
         {
-            name: "Rolando Batobato",
+            name: "",
             email: "",
             role: "Member",
-            image: "/src/Group4_pictures/rolando.jpeg"
+            image: "/"
         },
         {
-            name: "Mike Alcaraz",
+            name: "",
             email: "",
             role: "Member",
-            image: "/src/Group4_pictures/mike.jpeg"
+            image: "/"
         }
     ];
 
